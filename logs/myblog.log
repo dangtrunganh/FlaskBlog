@@ -1,14 +1,4 @@
-2020-08-13 16:41:38,751 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:54]
-2020-08-13 17:08:26,224 ERROR: Exception on /edit_profile [POST] [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
-    self.dialect.do_execute(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+2020-08-14 16:51:31,939 ERROR: Exception on /index [GET] [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -24,52 +14,28 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/routes.py", line 97, in edit_profile
-    db.session.commit()
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
-    self.transaction.commit()
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 504, in commit
-    self._prepare_impl()
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
-    self.session.flush()
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2523, in flush
-    self._flush(objects)
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2664, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
-    compat.raise_(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
-    raise exception
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2624, in _flush
-    flush_context.execute()
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
-    persistence.save_obj(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 230, in save_obj
-    _emit_update_statements(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 994, in _emit_update_statements
-    c = cached_connections[connection].execute(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
-    return meth(self, multiparams, params)
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1127, in _execute_clauseelement
-    ret = self._execute_context(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
-    self._handle_dbapi_exception(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
-    util.raise_(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
-    raise exception
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
-    self.dialect.do_execute(
-  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('VTAA', '', 2)]
-(Background on this error at: http://sqlalche.me/e/13/gkpj)
-2020-08-13 17:08:31,459 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:54]
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home Page', form=form, posts=posts)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/templates/index.html", line 5, in template
+    {{% if form %}}
+jinja2.exceptions.TemplateSyntaxError: unexpected '%'
+2020-08-14 16:52:04,562 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 17:20:54,361 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 17:39:39,161 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 17:44:25,561 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]

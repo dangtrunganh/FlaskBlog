@@ -1,0 +1,108 @@
+2020-08-13 16:41:38,751 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:54]
+2020-08-13 17:08:26,224 ERROR: Exception on /edit_profile [POST] [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    self.dialect.do_execute(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/routes.py", line 97, in edit_profile
+    db.session.commit()
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1042, in commit
+    self.transaction.commit()
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 504, in commit
+    self._prepare_impl()
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2523, in flush
+    self._flush(objects)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2664, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2624, in _flush
+    flush_context.execute()
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 230, in save_obj
+    _emit_update_statements(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 994, in _emit_update_statements
+    c = cached_connections[connection].execute(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
+    return meth(self, multiparams, params)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1127, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
+    self.dialect.do_execute(
+  File "/home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('VTAA', '', 2)]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+2020-08-13 17:08:31,459 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:54]
+2020-08-14 10:07:38,827 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 10:07:45,680 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:26:47,158 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:27:00,581 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:29:59,196 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:31:13,260 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:36:05,126 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:36:22,863 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:36:29,228 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:36:34,978 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:37:02,483 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:38:16,647 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:38:28,845 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:42:55,608 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:43:46,826 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 11:45:49,883 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 14:50:05,390 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 14:55:44,869 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 14:55:56,795 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 14:56:43,458 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 14:58:39,613 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 14:59:25,444 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:03:04,389 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:03:11,219 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:04:12,472 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:10:28,650 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:11:09,245 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:15:23,049 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:21:39,264 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 15:43:37,534 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 16:38:27,977 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 16:41:46,829 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
+2020-08-14 16:49:53,799 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:58]
