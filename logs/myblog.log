@@ -34,3 +34,7 @@ Traceback (most recent call last):
 jinja2.exceptions.TemplateSyntaxError: Missing end of comment tag
 2020-08-17 14:43:48,879 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:60]
 2020-08-17 14:44:09,735 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:60]
+2020-08-19 10:49:10,825 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:62]
+2020-08-25 13:54:32,898 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:69]
+2020-08-25 14:28:53,204 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:75]
+2020-08-25 14:30:25,787 INFO: Myblog startup [in /home/trunganh/AVTA/Work/code/FLASK_BLOG/myblog/app/__init__.py:75]
